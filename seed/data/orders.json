@@ -1,0 +1,251 @@
+{
+  "_comment": "Loads into orders + shopify_orders. All dates are relative day offsets resolved at seed time (see seed/README.md), so the 30-day return window stays meaningful whenever the demo is run. Each order maps to a row in the scenario matrix.",
+  "orders": [
+    {
+      "id": "ORD-1001",
+      "_scenario": "Happy-path return. Inside the 30-day window, refund $128 > $50 threshold, so it must pause for /admin approval.",
+      "customer_id": "CUST-0001",
+      "status": "DELIVERED",
+      "placed_days_ago": 11,
+      "shipped_days_ago": 9,
+      "delivered_days_ago": 5,
+      "shipping_method": "STANDARD",
+      "carrier": "UPS",
+      "tracking_number": "1Z999AA10123456784",
+      "subtotal_cents": 12800,
+      "shipping_cents": 0,
+      "tax_cents": 1152,
+      "total_cents": 13952,
+      "payment_id": "PAY-1001",
+      "line_items": [
+        { "sku": "NB-CASE-001", "variant_id": "NB-CASE-001-FUL-BLK", "title": "Atlas Tower Case", "size": "Full Tower", "quantity": 1, "unit_price_cents": 12800 }
+      ]
+    },
+    {
+      "id": "ORD-1002",
+      "_scenario": "Outside the 30-day window. Return must be denied on policy alone, with no tool call.",
+      "customer_id": "CUST-0001",
+      "status": "DELIVERED",
+      "placed_days_ago": 68,
+      "shipped_days_ago": 66,
+      "delivered_days_ago": 62,
+      "shipping_method": "STANDARD",
+      "carrier": "USPS",
+      "tracking_number": "9400111899223456781234",
+      "subtotal_cents": 6200,
+      "shipping_cents": 595,
+      "tax_cents": 558,
+      "total_cents": 7353,
+      "payment_id": "PAY-1002",
+      "line_items": [
+        { "sku": "NB-FAN-010", "variant_id": "NB-FAN-010-BLK", "title": "Airflow 120mm Fan, 3-pack", "size": "120mm", "quantity": 1, "unit_price_cents": 6200 }
+      ]
+    },
+    {
+      "id": "ORD-1003",
+      "_scenario": "Refund under $50 — auto-approved end to end, no admin step. The fastest full loop to demo.",
+      "customer_id": "CUST-0001",
+      "status": "DELIVERED",
+      "placed_days_ago": 14,
+      "shipped_days_ago": 13,
+      "delivered_days_ago": 9,
+      "shipping_method": "STANDARD",
+      "carrier": "USPS",
+      "tracking_number": "9400111899223456789012",
+      "subtotal_cents": 2800,
+      "shipping_cents": 595,
+      "tax_cents": 252,
+      "total_cents": 3647,
+      "payment_id": "PAY-1003",
+      "line_items": [
+        { "sku": "NB-TIM-021", "variant_id": "NB-TIM-021-5G", "title": "Cryo-X Thermal Compound, 5g", "size": "5g", "quantity": 1, "unit_price_cents": 2800 }
+      ]
+    },
+    {
+      "id": "ORD-1004",
+      "_scenario": "WISMO. Still in transit — read-only tracking and delivery estimate, no writes.",
+      "customer_id": "CUST-0001",
+      "status": "IN_TRANSIT",
+      "placed_days_ago": 3,
+      "shipped_days_ago": 2,
+      "delivered_days_ago": null,
+      "estimated_delivery_days_from_now": 2,
+      "shipping_method": "STANDARD",
+      "carrier": "UPS",
+      "tracking_number": "1Z999AA10987654321",
+      "tracking_status": "In transit",
+      "last_scan_location": "Sacramento, CA",
+      "last_scan_days_ago": 1,
+      "subtotal_cents": 21500,
+      "shipping_cents": 0,
+      "tax_cents": 1935,
+      "total_cents": 23435,
+      "payment_id": "PAY-1004",
+      "line_items": [
+        { "sku": "NB-MB-011", "variant_id": "NB-MB-011-ATX", "title": "Foundry B850 Motherboard", "size": "ATX", "quantity": 1, "unit_price_cents": 21500 }
+      ]
+    },
+    {
+      "id": "ORD-1005",
+      "_scenario": "Final-sale item. Return must be refused, with the 50% store credit goodwill offer (POL-RET-001).",
+      "customer_id": "CUST-0001",
+      "status": "DELIVERED",
+      "placed_days_ago": 18,
+      "shipped_days_ago": 17,
+      "delivered_days_ago": 12,
+      "shipping_method": "STANDARD",
+      "carrier": "USPS",
+      "tracking_number": "9400111899223456784567",
+      "subtotal_cents": 3400,
+      "shipping_cents": 595,
+      "tax_cents": 306,
+      "total_cents": 4301,
+      "payment_id": "PAY-1005",
+      "line_items": [
+        { "sku": "NB-SALE-030", "variant_id": "NB-SALE-030-BLK", "title": "Vantage DDR4-3200 16GB Kit", "size": "16GB (2x8GB)", "quantity": 1, "unit_price_cents": 3400, "final_sale": true }
+      ]
+    },
+    {
+      "id": "ORD-1006",
+      "_scenario": "High-value class. Always requires /admin approval regardless of amount, and routes to the inspection facility.",
+      "customer_id": "CUST-0001",
+      "status": "DELIVERED",
+      "placed_days_ago": 9,
+      "shipped_days_ago": 7,
+      "delivered_days_ago": 3,
+      "shipping_method": "EXPEDITED",
+      "carrier": "DHL",
+      "tracking_number": "JD014600008812345678",
+      "subtotal_cents": 78000,
+      "shipping_cents": 0,
+      "tax_cents": 7020,
+      "total_cents": 85020,
+      "payment_id": "PAY-1006",
+      "line_items": [
+        { "sku": "NB-GPU-040", "variant_id": "NB-GPU-040-BLK", "title": "Radiant RX-800 16GB Graphics Card", "size": "16GB", "quantity": 1, "unit_price_cents": 78000 }
+      ]
+    },
+    {
+      "id": "ORD-1007",
+      "_scenario": "Exchange black → white where the white kit is permanently out of stock. Exercises the inventory check and the fallback-to-refund branch.",
+      "customer_id": "CUST-0001",
+      "status": "DELIVERED",
+      "placed_days_ago": 13,
+      "shipped_days_ago": 12,
+      "delivered_days_ago": 8,
+      "shipping_method": "STANDARD",
+      "carrier": "UPS",
+      "tracking_number": "1Z999AA10555512345",
+      "subtotal_cents": 16800,
+      "shipping_cents": 0,
+      "tax_cents": 1512,
+      "total_cents": 18312,
+      "payment_id": "PAY-1007",
+      "line_items": [
+        { "sku": "NB-RAM-012", "variant_id": "NB-RAM-012-BLK", "title": "Kinetic DDR5-6000 32GB Kit", "size": "32GB (2x16GB)", "quantity": 1, "unit_price_cents": 16800 }
+      ]
+    },
+    {
+      "id": "ORD-1008",
+      "_scenario": "Refund that the payment simulator always declines. Exercises retry (max 2 per POL-REF-001) then escalation.",
+      "customer_id": "CUST-0001",
+      "status": "DELIVERED",
+      "placed_days_ago": 10,
+      "shipped_days_ago": 9,
+      "delivered_days_ago": 6,
+      "shipping_method": "STANDARD",
+      "carrier": "USPS",
+      "tracking_number": "9400111899223456787890",
+      "subtotal_cents": 9400,
+      "shipping_cents": 0,
+      "tax_cents": 846,
+      "total_cents": 10246,
+      "payment_id": "PAY-1008",
+      "line_items": [
+        { "sku": "NB-COOL-002", "variant_id": "NB-COOL-002-240-BLK", "title": "Frostline AIO Liquid Cooler", "size": "240mm", "quantity": 1, "unit_price_cents": 9400 }
+      ]
+    },
+    {
+      "id": "ORD-1009",
+      "_scenario": "Historical order with a completed return (see returns.json). Gives long-term memory something real to recall.",
+      "customer_id": "CUST-0001",
+      "status": "RETURNED",
+      "placed_days_ago": 52,
+      "shipped_days_ago": 50,
+      "delivered_days_ago": 45,
+      "shipping_method": "STANDARD",
+      "carrier": "UPS",
+      "tracking_number": "1Z999AA10111122223",
+      "subtotal_cents": 12800,
+      "shipping_cents": 0,
+      "tax_cents": 1152,
+      "total_cents": 13952,
+      "payment_id": "PAY-1009",
+      "line_items": [
+        { "sku": "NB-CASE-001", "variant_id": "NB-CASE-001-MID-BLK", "title": "Atlas Tower Case", "size": "Mid Tower", "quantity": 1, "unit_price_cents": 12800 }
+      ]
+    },
+    {
+      "id": "ORD-1010",
+      "_scenario": "GetOrder returns a malformed payload. Exercises the validation/fallback path when a tool response cannot be trusted.",
+      "customer_id": "CUST-0001",
+      "status": "DELIVERED",
+      "placed_days_ago": 16,
+      "shipped_days_ago": 15,
+      "delivered_days_ago": 10,
+      "shipping_method": "STANDARD",
+      "carrier": "UPS",
+      "tracking_number": "1Z999AA10444455556",
+      "subtotal_cents": 3800,
+      "shipping_cents": 595,
+      "tax_cents": 342,
+      "total_cents": 4737,
+      "payment_id": "PAY-1010",
+      "line_items": [
+        { "sku": "NB-CBL-020", "variant_id": "NB-CBL-020-BLK", "title": "Braided PSU Cable Extension Kit", "size": "One Size", "quantity": 1, "unit_price_cents": 3800 }
+      ],
+      "_simulate": "MALFORMED_PAYLOAD — Shopify.GetOrder returns this order with line_items missing and total_cents as a string. The agent must detect the bad shape rather than hallucinate around it."
+    },
+    {
+      "id": "ORD-1011",
+      "_scenario": "Marked delivered but customer says not received. Exercises the 48-hour wait sequence in POL-DMG-001.",
+      "customer_id": "CUST-0001",
+      "status": "DELIVERED",
+      "placed_days_ago": 8,
+      "shipped_days_ago": 7,
+      "delivered_days_ago": 4,
+      "shipping_method": "STANDARD",
+      "carrier": "USPS",
+      "tracking_number": "9400111899223456782345",
+      "tracking_status": "Delivered — left at front door",
+      "subtotal_cents": 6200,
+      "shipping_cents": 595,
+      "tax_cents": 558,
+      "total_cents": 7353,
+      "payment_id": "PAY-1011",
+      "line_items": [
+        { "sku": "NB-FAN-010", "variant_id": "NB-FAN-010-BLK", "title": "Airflow 120mm Fan, 3-pack", "size": "120mm", "quantity": 1, "unit_price_cents": 6200 }
+      ]
+    },
+    {
+      "id": "ORD-1012",
+      "_scenario": "Delivered 8 months ago — far outside the return window but inside the 2-year chassis warranty. Tests that the agent reaches for the warranty policy instead of denying on the return window.",
+      "customer_id": "CUST-0001",
+      "status": "DELIVERED",
+      "placed_days_ago": 247,
+      "shipped_days_ago": 245,
+      "delivered_days_ago": 241,
+      "shipping_method": "STANDARD",
+      "carrier": "UPS",
+      "tracking_number": "1Z999AA10777788889",
+      "subtotal_cents": 12800,
+      "shipping_cents": 0,
+      "tax_cents": 1152,
+      "total_cents": 13952,
+      "payment_id": "PAY-1012",
+      "line_items": [
+        { "sku": "NB-CASE-001", "variant_id": "NB-CASE-001-FUL-BLK", "title": "Atlas Tower Case", "size": "Full Tower", "quantity": 1, "unit_price_cents": 12800 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "_comment": "Loads into crm_tickets. Past support history — establishes tone preference, the known clearance issue, and one prior claim so the second-occurrence rule in POL-DMG-001 has a baseline to compare against.",
+  "tickets": [
+    {
+      "id": "TKT-3001",
+      "customer_id": "CUST-0001",
+      "order_id": "ORD-1009",
+      "channel": "web_chat",
+      "category": "RETURN",
+      "subject": "Atlas Mid Tower too tight for a 332mm card",
+      "status": "CLOSED",
+      "priority": "NORMAL",
+      "created_days_ago": 41,
+      "closed_days_ago": 38,
+      "resolution": "Return approved and refunded in full. Advised moving up to the Full Tower for GPU clearance.",
+      "csat_score": 5,
+      "notes": "Customer was easy to work with and wanted a quick answer, not a long explanation."
+    },
+    {
+      "id": "TKT-3002",
+      "customer_id": "CUST-0001",
+      "order_id": null,
+      "channel": "web_chat",
+      "category": "PRODUCT_QUESTION",
+      "subject": "Does the Titan CPU come with a cooler?",
+      "status": "CLOSED",
+      "priority": "LOW",
+      "created_days_ago": 27,
+      "closed_days_ago": 27,
+      "resolution": "Confirmed it ships without a cooler and needs a 280mm liquid cooler or better at 350W. Pointed at the Frostline 360mm.",
+      "csat_score": 5,
+      "notes": "Answered from the knowledge base, no tool calls needed."
+    },
+    {
+      "id": "TKT-3003",
+      "customer_id": "CUST-0001",
+      "order_id": "ORD-1005",
+      "channel": "web_chat",
+      "category": "SHIPPING",
+      "subject": "Where is my order?",
+      "status": "CLOSED",
+      "priority": "NORMAL",
+      "created_days_ago": 15,
+      "closed_days_ago": 15,
+      "resolution": "Tracking had not updated for 36 hours. Explained normal carrier lag; parcel delivered the next day.",
+      "csat_score": 4,
+      "notes": "Mild frustration at the tracking gap. Resolved without escalation."
+    },
+    {
+      "id": "TKT-3004",
+      "customer_id": "CUST-0001",
+      "order_id": "ORD-1006",
+      "channel": "web_chat",
+      "category": "GENERAL_QA",
+      "subject": "Graphics card sag and support bracket",
+      "status": "CLOSED",
+      "priority": "LOW",
+      "created_days_ago": 2,
+      "closed_days_ago": 2,
+      "resolution": "Explained the anti-sag bracket ships in the box with the RX-800 and how to fit it to the case rail.",
+      "csat_score": 5,
+      "notes": "Bought the RX-800 recently and is careful about how it is installed."
+    }
+  ]
+}

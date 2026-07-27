@@ -1,0 +1,25 @@
+{
+  "_comment": "Loads into shopify_returns. One completed historical return, so the customer arrives with real return history and long-term memory has something to recall.",
+  "returns": [
+    {
+      "id": "RET-2001",
+      "order_id": "ORD-1009",
+      "customer_id": "CUST-0001",
+      "status": "COMPLETED",
+      "reason": "SIZE_TOO_SMALL",
+      "customer_note": "Well built case but the mid tower is too tight for a 332mm card with the front fans in. Would try the full tower.",
+      "created_days_ago": 41,
+      "label_issued_days_ago": 41,
+      "received_days_ago": 39,
+      "inspection_result": "PASSED",
+      "refund_amount_cents": 13952,
+      "refunded_days_ago": 38,
+      "return_shipping_fee_cents": 0,
+      "fee_waived_reason": "GOLD_TIER",
+      "line_items": [
+        { "sku": "NB-CASE-001", "variant_id": "NB-CASE-001-MID-BLK", "title": "Atlas Tower Case", "size": "Mid Tower", "quantity": 1 }
+      ],
+      "resolution_note": "Refunded in full. Customer advised the Full Tower clears 400mm cards and subsequently reordered it (ORD-1001)."
+    }
+  ]
+}

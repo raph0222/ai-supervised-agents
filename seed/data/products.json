@@ -1,0 +1,154 @@
+{
+  "_comment": "Product catalog + shopify_inventory. product_class drives the policy engine: HIGH_VALUE always requires human approval. final_sale blocks returns and exchanges entirely.",
+  "products": [
+    {
+      "sku": "NB-CASE-001",
+      "title": "Atlas Tower Case",
+      "category": "cases",
+      "product_class": "STANDARD",
+      "price_cents": 12800,
+      "final_sale": false,
+      "warranty_months": 24,
+      "description": "Steel and tempered-glass chassis with a mesh front, three 120mm intake fans included and a vertical GPU mount. The Mid Tower clears 330mm cards and 165mm coolers; the Full Tower clears 400mm and 185mm.",
+      "variants": [
+        { "variant_id": "NB-CASE-001-MID-BLK", "size": "Mid Tower", "color": "Black", "stock": 14 },
+        { "variant_id": "NB-CASE-001-MID-WHT", "size": "Mid Tower", "color": "White", "stock": 8 },
+        { "variant_id": "NB-CASE-001-FUL-BLK", "size": "Full Tower", "color": "Black", "stock": 21 },
+        { "variant_id": "NB-CASE-001-FUL-WHT", "size": "Full Tower", "color": "White", "stock": 3 }
+      ]
+    },
+    {
+      "sku": "NB-COOL-002",
+      "title": "Frostline AIO Liquid Cooler",
+      "category": "cooling",
+      "product_class": "STANDARD",
+      "price_cents": 9400,
+      "final_sale": false,
+      "warranty_months": 24,
+      "description": "Closed-loop liquid cooler with a copper cold plate, a low-noise pump and pre-applied thermal compound. Ships with AM5 and LGA1700 brackets in the box.",
+      "variants": [
+        { "variant_id": "NB-COOL-002-240-BLK", "size": "240mm", "color": "Black", "stock": 11 },
+        { "variant_id": "NB-COOL-002-240-WHT", "size": "240mm", "color": "White", "stock": 6 },
+        { "variant_id": "NB-COOL-002-360-BLK", "size": "360mm", "color": "Black", "stock": 9 }
+      ]
+    },
+    {
+      "sku": "NB-FAN-010",
+      "title": "Airflow 120mm Fan, 3-pack",
+      "category": "cooling",
+      "product_class": "STANDARD",
+      "price_cents": 6200,
+      "final_sale": false,
+      "warranty_months": 24,
+      "description": "Fluid-dynamic bearing fans, 1600 RPM, PWM controlled, rubber-mounted corners. Daisy-chain cables included.",
+      "variants": [
+        { "variant_id": "NB-FAN-010-BLK", "size": "120mm", "color": "Black", "stock": 22 },
+        { "variant_id": "NB-FAN-010-WHT", "size": "120mm", "color": "White", "stock": 17 },
+        { "variant_id": "NB-FAN-010-ARGB", "size": "120mm ARGB", "color": "Black", "stock": 13 }
+      ]
+    },
+    {
+      "sku": "NB-MB-011",
+      "title": "Foundry B850 Motherboard",
+      "category": "motherboards",
+      "product_class": "STANDARD",
+      "price_cents": 21500,
+      "final_sale": false,
+      "warranty_months": 36,
+      "description": "AM5 socket, DDR5 up to 8000 MT/s, PCIe 5.0 x16, two M.2 slots with heatsinks, 2.5G LAN. Check the form factor against your case before ordering — an ATX board does not fit a Mini-ITX chassis.",
+      "variants": [
+        { "variant_id": "NB-MB-011-ATX", "size": "ATX", "color": "Black", "stock": 5 },
+        { "variant_id": "NB-MB-011-MATX", "size": "Micro-ATX", "color": "Black", "stock": 12 },
+        { "variant_id": "NB-MB-011-ITX", "size": "Mini-ITX", "color": "Black", "stock": 7 }
+      ]
+    },
+    {
+      "sku": "NB-RAM-012",
+      "title": "Kinetic DDR5-6000 32GB Kit",
+      "category": "memory",
+      "product_class": "STANDARD",
+      "price_cents": 16800,
+      "final_sale": false,
+      "warranty_months": 60,
+      "description": "Matched 2x16GB kit, CL30, EXPO and XMP profiles on board, low-profile aluminium heatspreader that clears most air coolers. DDR5 only — it will not post in a DDR4 board.",
+      "variants": [
+        { "variant_id": "NB-RAM-012-BLK", "size": "32GB (2x16GB)", "color": "Black", "stock": 4 },
+        { "variant_id": "NB-RAM-012-SLV", "size": "32GB (2x16GB)", "color": "Silver", "stock": 9 },
+        {
+          "variant_id": "NB-RAM-012-WHT",
+          "size": "32GB (2x16GB)",
+          "color": "White",
+          "stock": 0,
+          "restock_date": null,
+          "_simulate": "PERMANENT_OUT_OF_STOCK — target of the ORD-1007 exchange. No restock date, so the exchange must fall back to a refund with shipping waived (POL-EXC-001)."
+        }
+      ]
+    },
+    {
+      "sku": "NB-CBL-020",
+      "title": "Braided PSU Cable Extension Kit",
+      "category": "accessories",
+      "product_class": "STANDARD",
+      "price_cents": 3800,
+      "final_sale": false,
+      "warranty_months": 24,
+      "description": "Individually sleeved 24-pin, EPS and PCIe extensions with combs. Extensions only — they do not replace the cables that came with the power supply.",
+      "variants": [
+        { "variant_id": "NB-CBL-020-BLK", "size": "One Size", "color": "Black", "stock": 34 }
+      ]
+    },
+    {
+      "sku": "NB-TIM-021",
+      "title": "Cryo-X Thermal Compound, 5g",
+      "category": "accessories",
+      "product_class": "STANDARD",
+      "price_cents": 2800,
+      "final_sale": false,
+      "warranty_months": 24,
+      "description": "Non-conductive, non-capacitive paste rated to 12.5 W/mK. Includes a spreader and two cleaning wipes.",
+      "variants": [
+        { "variant_id": "NB-TIM-021-5G", "size": "5g", "color": "Grey", "stock": 41 }
+      ]
+    },
+    {
+      "sku": "NB-SALE-030",
+      "title": "Vantage DDR4-3200 16GB Kit",
+      "category": "memory",
+      "product_class": "STANDARD",
+      "price_cents": 3400,
+      "final_sale": true,
+      "warranty_months": 60,
+      "description": "Matched 2x8GB kit, CL16. End-of-life platform clearance — final sale, no returns or exchanges.",
+      "variants": [
+        { "variant_id": "NB-SALE-030-BLK", "size": "16GB (2x8GB)", "color": "Black", "stock": 6 },
+        { "variant_id": "NB-SALE-030-GRN", "size": "16GB (2x8GB)", "color": "Green", "stock": 2 }
+      ]
+    },
+    {
+      "sku": "NB-GPU-040",
+      "title": "Radiant RX-800 16GB Graphics Card",
+      "category": "graphics cards",
+      "product_class": "HIGH_VALUE",
+      "price_cents": 78000,
+      "final_sale": false,
+      "warranty_months": 36,
+      "description": "Triple-fan 16GB card, 2.8 slots, 332mm long, 12V-2x6 power connector. Measure your case clearance before ordering; a 750W supply is the practical minimum.",
+      "variants": [
+        { "variant_id": "NB-GPU-040-BLK", "size": "16GB", "color": "Black", "stock": 4 }
+      ]
+    },
+    {
+      "sku": "NB-CPU-041",
+      "title": "Titan 32-Core Workstation CPU",
+      "category": "processors",
+      "product_class": "HIGH_VALUE",
+      "price_cents": 145000,
+      "final_sale": false,
+      "warranty_months": 36,
+      "description": "32 cores, 64 threads, 5.4 GHz boost, 128 PCIe lanes, 350W TDP. Sold without a cooler — a 280mm liquid cooler or better is required.",
+      "variants": [
+        { "variant_id": "NB-CPU-041-32C", "size": "32-core", "color": "Silver", "stock": 2 }
+      ]
+    }
+  ]
+}

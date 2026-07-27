@@ -1,0 +1,33 @@
+{
+  "_comment": "The single hardcoded user. The backend resolves this id from DEFAULT_CUSTOMER_ID, not from a session or token.",
+  "customer": {
+    "id": "CUST-0001",
+    "shopify_customer_id": "gid://shopify/Customer/8801234567",
+    "stripe_customer_id": "cus_SIM0001northbridge",
+    "first_name": "Gregory",
+    "last_name": "House",
+    "email": "gregory.house@example.com",
+    "phone": "+1-415-555-0142",
+    "created_days_ago": 640,
+    "loyalty_tier": "GOLD",
+    "lifetime_spend_cents": 187300,
+    "order_count": 12,
+    "risk_score": 12,
+    "vip": false,
+    "default_address": {
+      "line1": "418 Valencia Street",
+      "line2": "Apt 3B",
+      "city": "San Francisco",
+      "state": "CA",
+      "postal_code": "94103",
+      "country": "US"
+    },
+    "preferences": {
+      "platform": "AM5",
+      "case_form_factor": "Full Tower",
+      "communication_style": "concise",
+      "preferred_contact": "email",
+      "notes": "Has returned a mid tower once for GPU clearance and rebuilt in the full tower. Prefers direct answers over long explanations."
+    }
+  }
+}
